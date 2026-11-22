@@ -1,0 +1,19 @@
+=== CPU ===
+CPU(s):                                  4
+Model name:                              11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+Thread(s) per core:                      1
+Core(s) per socket:                      4
+L2 cache:                                5 MiB (4 instances)
+L3 cache:                                48 MiB (4 instances)
+=== Memory ===
+               total        used        free      shared  buff/cache   available
+Mem:           5.3Gi       2.7Gi       285Mi        63Mi       2.2Gi       2.5Gi
+=== OS ===
+Description:	Ubuntu 26.04.1 LTS
+7.0.0-43-generic
+=== Compilers ===
+g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+=== Environment ===
+Ubuntu 26.04.1 LTS guest in VirtualBox on a Windows host, 4 virtual CPUs
+=== MPI ===
+                Open MPI: 5.0.10

@@ -1,0 +1,69 @@
+
+Table A [lloyd]: run times in seconds  (serial = 29.854 s, N=4000000)
+                                  1          2          4
+pure OpenMP (1 x p)          28.066     15.792     11.711
+pure MPI (p x 1)                  -     30.599     10.950
+hybrid (p/2 x 2)                  -          -     10.950
+
+Table B [lloyd]: speedup S = T_serial / T_p
+                                  1          2          4
+pure OpenMP (1 x p)           1.064      1.890      2.549
+pure MPI (p x 1)                  -      0.976      2.726
+hybrid (p/2 x 2)                  -          -      2.726
+
+Table C [lloyd]: efficiency E = S / p
+                                  1          2          4
+pure OpenMP (1 x p)           1.064      0.945      0.637
+pure MPI (p x 1)                  -      0.488      0.682
+hybrid (p/2 x 2)                  -          -      0.682
+
+Table A [hamerly]: run times in seconds  (serial = 3.492 s, N=4000000)
+                                  1          2          4
+pure OpenMP (1 x p)           3.270      2.300      2.148
+pure MPI (p x 1)                  -      2.313      2.152
+hybrid (p/2 x 2)                  -          -      2.140
+
+Table B [hamerly]: speedup S = T_serial / T_p
+                                  1          2          4
+pure OpenMP (1 x p)           1.068      1.518      1.626
+pure MPI (p x 1)                  -      1.510      1.623
+hybrid (p/2 x 2)                  -          -      1.632
+
+Table C [hamerly]: efficiency E = S / p
+                                  1          2          4
+pure OpenMP (1 x p)           1.068      0.759      0.407
+pure MPI (p x 1)                  -      0.755      0.406
+hybrid (p/2 x 2)                  -          -      0.408
+
+Table D: accumulation strategy (threads=4, N=1000000) - time and slow-down vs private
+                            time(s)   x slower
+private                       0.539      1.000
+reduction                     0.503      0.934
+atomic                        1.362      2.526
+critical                      2.415      4.478
+falseshare                    0.894      1.658
+
+Table E: loop scheduling / tasking
+                            time(s)
+static                        0.499
+dynamic                       0.518
+guided                        0.572
+task                          0.507
+
+Table F: dynamic chunk size (small chunks -> cache lines of lab[] shared between threads)
+                            time(s)
+dynamic1                      0.759
+dynamic16                     0.597
+dynamic256                    0.564
+dynamic4096                   0.566
+
+Table G (like Table 5.3): ONE parallel region vs fork-join phases, N=100000, iters=200
+                                  1          2          3          4
+one parallel region           3.138      1.680      1.247      1.248
+fork-join per phase           3.071      1.692      1.257      1.372
+
+Table H: choice of K (elbow + silhouette) - serial vs tasks
+                                  1          2          4
+hybrid time(s)                0.905      0.507      0.297
+speedup                       1.458      2.603      4.447
+(serial time = 1.320 s)

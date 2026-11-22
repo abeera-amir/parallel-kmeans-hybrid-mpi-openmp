@@ -1,0 +1,4 @@
+kmeans_serial
+kmeans_hybrid
+*.o
+*.bak
