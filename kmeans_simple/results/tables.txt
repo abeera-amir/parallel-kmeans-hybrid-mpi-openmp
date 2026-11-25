@@ -1,0 +1,30 @@
+
+Classic K-Means   (serial time = 43.916 s)
+setup     procs  threads    p    time(s)   speedup  efficiency
+serial        0        1    1     43.916      1.00        1.00
+openmp        1        1    1     38.507      1.14        1.14
+openmp        1        2    2     21.757      2.02        1.01
+mpi           2        1    2     36.159      1.21        0.61
+openmp        1        4    4     13.369      3.28        0.82
+mpi           4        1    4     13.147      3.34        0.84
+hybrid        2        2    4     14.110      3.11        0.78
+
+K-Means++   (serial time = 38.473 s)
+setup     procs  threads    p    time(s)   speedup  efficiency
+serial        0        1    1     38.473      1.00        1.00
+openmp        1        1    1     50.695      0.76        0.76
+openmp        1        2    2     23.197      1.66        0.83
+mpi           2        1    2     21.980      1.75        0.88
+openmp        1        4    4     13.411      2.87        0.72
+mpi           4        1    4     12.262      3.14        0.78
+hybrid        2        2    4     11.033      3.49        0.87
+
+Hamerly   (serial time = 4.433 s)
+setup     procs  threads    p    time(s)   speedup  efficiency
+serial        0        1    1      4.433      1.00        1.00
+openmp        1        1    1      4.715      0.94        0.94
+openmp        1        2    2      3.790      1.17        0.58
+mpi           2        1    2      3.548      1.25        0.62
+openmp        1        4    4      3.178      1.39        0.35
+mpi           4        1    4      3.775      1.17        0.29
+hybrid        2        2    4      3.501      1.27        0.32
